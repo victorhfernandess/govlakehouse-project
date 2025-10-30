@@ -48,7 +48,7 @@ module adls 'modules/adls.bicep' = {
 }
 
 // ------------------------------------------------------------------
-// 3. NOVO MÓDULO: Databricks Workspace
+// 3. MÓDULO: Databricks Workspace
 // ------------------------------------------------------------------
 module dbw 'modules/databricks.bicep' = {
   name: 'deploy-databricks'
@@ -57,11 +57,8 @@ module dbw 'modules/databricks.bicep' = {
     location: location
     tags: tags
     databricksWorkspaceName: 'dbw-${prefix}-dev-001'
-  } // <--- O 'params' FECHA AQUI
+  } 
 
-  // 'dependsOn' fica AQUI, no mesmo nível de 'name', 'scope' e 'params'
-  // Garantimos que o Databricks só seja criado DEPOIS
-  // que o ADLS e o Key Vault estiverem prontos.
   dependsOn: [
     kv
     adls

@@ -23,10 +23,8 @@ resource dbw 'Microsoft.Databricks/workspaces@2023-02-01' = {
   sku: {
     name: databricksSku
   }
-  // Em um deploy mais avançado, configuraríamos aqui o VNet integration
-  // Por enquanto, a configuração padrão é suficiente.
   properties: {
-    // A CORREÇÃO ESTÁ AQUI: Adicionamos a barra '/' no início do caminho.
+
     managedResourceGroupId: '/subscriptions/${subscription().subscriptionId}/resourceGroups/rg-databricks-managed-${databricksWorkspaceName}'
   }
 }

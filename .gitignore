@@ -1,0 +1,9 @@
+# VS Code
+.vscode/
+
+# Bicep (configurações locais)
+bicepconfig.json
+
+# Arquivos de sistema
+*.DS_Store
+Thumbs.db
